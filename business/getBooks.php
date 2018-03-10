@@ -2,7 +2,7 @@
 
 //local Vars
 
-//ToDo move this into a it's file
+//ToDo move this into a its own file
 $db = new mysqli( 'db715378838.db.1and1.com', 'dbo715378838', 'Linux2018', 'db715378838');
 
 if (mysqli_connect_errno()) {
