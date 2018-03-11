@@ -1,5 +1,5 @@
 <?php
-class Books { 
+class Books {
 
    var $isbn;
    var $author;

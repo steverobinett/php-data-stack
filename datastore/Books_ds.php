@@ -9,7 +9,7 @@ class Books_ds extends Books{
 
     $this->conn = $conn;
 
-  }
+  } 
 
   function select($sel_list){
 
@@ -18,7 +18,7 @@ class Books_ds extends Books{
     }
 
     $qry = 'SELECT '. $sel_list.' FROM Books';
-    $stmt = $this->conn->prepare($qry); 
+    $stmt = $this->conn->prepare($qry);
     $stmt->execute();
     $stmt->store_result();
     $stmt->bind_result($isbn, $author, $title, $price);

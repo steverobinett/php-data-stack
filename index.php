@@ -5,7 +5,7 @@
   <title>CSCI213 Sandbox Project</title>
 </head>
 
-<body>
+<body> 
   <div class="menu">
     <h3 class="heading">Welcome to Steve's Site</h3>
 
