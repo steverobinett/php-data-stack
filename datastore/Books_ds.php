@@ -9,7 +9,7 @@ class Books_ds extends Books{
 
     $this->conn = $conn;
 
-  } 
+  }
 
   function select($sel_list){
 
@@ -23,17 +23,21 @@ class Books_ds extends Books{
     $stmt->store_result();
     $stmt->bind_result($isbn, $author, $title, $price);
 
-    $rows = array();
+    $returnSet = array();
     while ($stmt->fetch()){
+      $row = array();
 
-      array_push($rows,$isbn);
-      array_push($rows,$author);
-      array_push($rows,$title);
-      array_push($rows,$price);
+      array_push($row,$isbn);
+      array_push($row,$author);
+      array_push($row,$title);
+      array_push($row,$price);
+
+      array_push($returnSet, $row);
 
 
     }
-    return $rows;
+
+    return $returnSet;
   }
 
   function insert($values){
