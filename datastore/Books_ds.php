@@ -13,12 +13,12 @@ class Books_ds extends Books{
 
   function select($sel_list){
 
-    if ($sel_list == null){
+    if ($sel_list == NULL){
       $sel_list = '*';
     }
 
     $qry = 'SELECT '. $sel_list.' FROM Books';
-    $stmt = $this->conn->prepare($qry);
+    $stmt = $this->conn->prepare($qry); 
     $stmt->execute();
     $stmt->store_result();
     $stmt->bind_result($isbn, $author, $title, $price);
@@ -27,6 +27,9 @@ class Books_ds extends Books{
     while ($stmt->fetch()){
 
       array_push($rows,$isbn);
+      array_push($rows,$author);
+      array_push($rows,$title);
+      array_push($rows,$price);
 
 
     }
