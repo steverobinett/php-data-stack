@@ -16,6 +16,9 @@ class Books_ds extends Books{
     if ($sel_list == NULL){
       $sel_list = '*';
     }
+    else {
+      # expect csv string in arg. explode into arr
+    }
 
     $qry = 'SELECT '. $sel_list.' FROM Books';
     $stmt = $this->conn->prepare($qry);
