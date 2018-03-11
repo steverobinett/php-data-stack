@@ -14,11 +14,19 @@ require('../datastore/db_conn.php');
 
   //local Vars
 
-  $db = bookDb_Connect(); 
+  $db = bookDb_Connect();
 
   $books = new Books_ds($db);
   $bookArr = $books->select(NULL);
-  var_dump($bookArr);
+
+  foreach ($bookArr as $row){
+      //var_dump($row);
+      foreach($row as $col){
+        echo $col.'&nbsp;';
+      }
+      echo '<br/>NEXT<br/>';
+  }
+
 
 
    ?>
