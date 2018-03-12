@@ -3,9 +3,9 @@
 <head>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <title>CSCI213 Sandbox Project</title>
-</head>
+</head> 
 
-<body> 
+<body>
   <div class="menu">
     <h3 class="heading">Welcome to Steve's Site</h3>
 

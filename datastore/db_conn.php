@@ -16,7 +16,7 @@ function bookDb_Connect(){
          //exit;
   }
       else{
-        echo 'DB Connect OK. Status is '.mysqli_connect_errno().'<br/>';
+        echo 'DB Connect is OK.'.'<br/>';
   }
    return $db;
 }

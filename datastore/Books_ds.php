@@ -9,7 +9,7 @@ class Books_ds extends Books{
 
     $this->conn = $conn;
 
-  }
+  } 
 
   function select($sel_list){
 
