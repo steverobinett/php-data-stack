@@ -9,8 +9,7 @@ function bookDb_Connect(){
 
   if ($status) {
          echo '<p>Error: Could not connect to database.<br/>
-
-         Please try again later.</p>';
+              Please try again later.</p>';
          echo 'Status is '.mysqli_connect_errno().'<br/>';
          $db = NULL;
          //exit;
