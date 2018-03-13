@@ -15,10 +15,8 @@ function bookDb_Connect(){
          $db = NULL;
          //exit;
   }
-      else{
-        echo 'DB Connect is OK.'.'<br/>';
-  }
-   return $db;
+
+  return $db;
 }
 
 
