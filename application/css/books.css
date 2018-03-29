@@ -4,7 +4,7 @@ body {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
-.menu {
+.cleanTbl {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 50%;
@@ -14,7 +14,7 @@ body {
 
 table, td, th {border: 1px solid gray};
 
-.menu th {
+.cleanTbl th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -22,9 +22,9 @@ table, td, th {border: 1px solid gray};
     color: black;
 }
 
-.menu tr:hover {background-color: #ddd;}
+.cleanTbl tr:hover {background-color: #ddd;}
 
-.menu td, .menu th {
+.cleanTbl td, .cleanTbl th {
     border: 1px solid #ddd;
     padding: 8px;
 }

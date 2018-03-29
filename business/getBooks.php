@@ -30,15 +30,15 @@ require('../datastore/db_conn.php');
    <?php
   function buildHTMLTable($dataSet){
 
-    $tblHTML = "<table  class='menu'>";
+    $tblHTML = "<table  class='cleanTbl'>";
 
     foreach ($dataSet as $row) {
 
-      $tblHTML = $tblHTML."<tr class='menu'>";
+      $tblHTML = $tblHTML."<tr class='cleanTbl'>";
 
       foreach($row as $col){
 
-        $tblHTML = $tblHTML."<td class='menu'>$col</td>";
+        $tblHTML = $tblHTML."<td class='cleanTbl'>$col</td>";
 
       }
       $tblHTML = $tblHTML."</tr>";
