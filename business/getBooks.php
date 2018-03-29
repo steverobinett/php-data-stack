@@ -20,7 +20,7 @@ require('../datastore/db_conn.php');
   $db = bookDb_Connect();
 
   $books = new Books_ds($db);
-  $bookArr = $books->selectAll(NULL); // NULL = 'get all cols'
+  $bookArr = $books->select(NULL); // NULL = 'get all cols'
 
 
   echo buildHTMLTable($bookArr);
@@ -30,15 +30,15 @@ require('../datastore/db_conn.php');
    <?php
   function buildHTMLTable($dataSet){
 
-    $tblHTML = "<table  id='menu' border=1>";
+    $tblHTML = "<table  class='menu'>";
 
     foreach ($dataSet as $row) {
 
-      $tblHTML = $tblHTML."<tr id='menu'>";
+      $tblHTML = $tblHTML."<tr class='menu'>";
 
       foreach($row as $col){
 
-        $tblHTML = $tblHTML."<td id='menu'>$col</td>";
+        $tblHTML = $tblHTML."<td class='menu'>$col</td>";
 
       }
       $tblHTML = $tblHTML."</tr>";
