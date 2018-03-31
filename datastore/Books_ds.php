@@ -11,6 +11,12 @@ class Books_ds extends Books{
 
   }
 
+  function selectSingle($key){
+    $row = NULL;
+
+    return $row;
+  }
+
   function select($sel_list){
 
     if ($sel_list == NULL){
