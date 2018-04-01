@@ -5,28 +5,33 @@ body {
 }
 
 .cleanTbl {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
 }
 
 /**/
 
-table, td, th {border: 1px solid gray};
-
-.cleanTbl th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #D4DAF7;
-    color: black;
+table, td, th {
+  border: 1px solid gray
 }
 
-.cleanTbl tr:hover {background-color: #ddd;}
+;
+.cleanTbl th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D4DAF7;
+  color: black;
+}
+
+.cleanTbl tr:hover {
+  background-color: #ddd;
+}
 
 .cleanTbl td, .cleanTbl th {
-    border: 1px solid #ddd;
-    padding: 8px;
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 .banner {
@@ -35,8 +40,8 @@ table, td, th {border: 1px solid gray};
   background-color: #D4DAF7;
   color: black;
   width: 50%;
-
 }
+
 .foot {
   font-size: .75em;
   font-style: oblique;
@@ -44,8 +49,8 @@ table, td, th {border: 1px solid gray};
   /* text-align: center; */
   color: black;
   width: 50%;
-
 }
+
 .full-width {
   width: 100%;
 }

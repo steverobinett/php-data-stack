@@ -1,60 +1,67 @@
 <?php
 require('../data/books.php');
 
-class Books_ds extends Books{
+class Books_ds extends Books
+{
+    public $conn;
 
-  var $conn;
-
-  function __construct($conn){
-
-    $this->conn = $conn;
-
-  }
-
-  function selectSingle($key){
-    $row = NULL;
-
-    return $row;
-  }
-
-  function select($sel_list){
-
-    if ($sel_list == NULL){
-      $sel_list = '*';
-    }
-    else {
-      # expect csv string in arg. explode into arr
+    public function __construct($conn)
+    {
+        $this->conn = $conn;
     }
 
-    $qry = 'SELECT '. $sel_list.' FROM Books';
-    $stmt = $this->conn->prepare($qry);
-    $stmt->execute();
-    $stmt->store_result();
-    $stmt->bind_result($this->isbn, $this->author, $this->title, $this->price);
+    public function selectSingle($key)
+    {
+        $row = null;
 
-    $returnSet = array();
-    while ($stmt->fetch()){
-      $row = array();
+        $qry = 'SELECT '. $sel_list.' FROM Books WHERE Books.isbn = ?';
+        $stmt = $this->conn->prepare($qry);
+        $stmt->bind_param("s", $key);
+        $stmt->execute();
+        $stmt->store_result();
+        $stmt->bind_result($this->isbn, $this->author, $this->title, $this->price);
 
-      array_push($row,$this->isbn);
-      array_push($row,$this->author);
-      array_push($row,$this->title);
-      array_push($row,$this->price);
-
-      array_push($returnSet, $row);
-
-
+        $row = array();
+        while ($stmt->fetch()) {
+            array_push($row, $this->isbn);
+            array_push($row, $this->author);
+            array_push($row, $this->title);
+            array_push($row, $this->price);
+        }
+        return $row;
     }
 
-    return $returnSet;
-  }
+    public function select($sel_list)
+    {
+        if ($sel_list == null) {
+            $sel_list = '*';
+        } else {
+            # expect csv string in arg. explode into arr
+        }
 
-  function insert($values){
+        $qry = 'SELECT '. $sel_list.' FROM Books';
+        $stmt = $this->conn->prepare($qry);
+        $stmt->execute();
+        $stmt->store_result();
+        $stmt->bind_result($this->isbn, $this->author, $this->title, $this->price);
 
-    return null;
-  }
+        $returnSet = array();
+        while ($stmt->fetch()) {
+            $row = array();
+
+            array_push($row, $this->isbn);
+            array_push($row, $this->author);
+            array_push($row, $this->title);
+            array_push($row, $this->price);
+
+            array_push($returnSet, $row);
+        }
+
+        return $returnSet;
+    }
+
+    public function insert($values)
+    {
+        return null;
+    }
 }
-
-
-
- ?>
