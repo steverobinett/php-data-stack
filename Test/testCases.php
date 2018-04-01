@@ -9,9 +9,18 @@
 
   <?php
   require("../datastore/db_conn.php");
+  require("../datastore/Books_ds.php");
 
-  $conn = bookDb_Connect(); 
+  echo '<p> Test Case for single select</p>';
+  $conn = bookDb_Connect();
+  $books = new Books_ds($conn);
+
   $key ="0-672-31697-8";
+
+  $bookRow = $books->selectSingle($key);
+  var_dump($bookRow);
+
+
 
 
 

@@ -14,11 +14,12 @@ class Books_ds extends Books
     {
         $row = null;
 
-        $qry = 'SELECT '. $sel_list.' FROM Books WHERE Books.isbn = ?';
+        $qry = 'SELECT * FROM Books WHERE Books.isbn = ?';
+        echo $qry;
         $stmt = $this->conn->prepare($qry);
-        $stmt->bind_param("s", $key);
+        $stmt->bind_param('s', $key);
         $stmt->execute();
-        $stmt->store_result();
+      //  $stmt->store_result();
         $stmt->bind_result($this->isbn, $this->author, $this->title, $this->price);
 
         $row = array();
@@ -28,6 +29,7 @@ class Books_ds extends Books
             array_push($row, $this->title);
             array_push($row, $this->price);
         }
+
         return $row;
     }
 
