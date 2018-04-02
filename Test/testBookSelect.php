@@ -3,24 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../application/css/books.css">
   <title>Document</title>
 </head>
 <body>
 
   <?php
-  require("../datastore/db_conn.php");
-  require("../datastore/Books_ds.php");
 
-  echo '<p> Test Case for single select</p>';
-  $conn = bookDb_Connect();
-  $books = new Books_ds($conn); 
+  //Test mysqli_driver
 
-  $key ="0-672-31697-8";
+testBook_ds();
 
-  $bookRow = $books->selectSingle($key);
+  function testBook_ds()
+  {
+      require("../datastore/db_conn.php");
+      require("../datastore/Books_ds.php");
+      require("../application/util/formattingUtils.php");
 
-  echo '<br/>'.implode(' ',$bookRow);
+      $conn = bookDb_Connect();
+      $books = new Books_ds($conn);
 
+      $key ="0-672-31697-8";
+
+
+      $bookRow = null;
+      $bookRow = $books->selectSingle($key);
+      if (isset($bookRow)) {
+          echo '<p>Test passed: Single Select</p>';
+          echo '<br/>'.implode(' ', $bookRow);
+      }else{
+          echo '<p>Test FAILED: Single Select</p>';
+      }
+
+      $recSet = NULL;
+      $recSet = $books->selectAll(null);
+      if (isset($recSet)) {
+          echo '<p>Test passed: Select Allt</p>';
+          echo '<br/>'.implode(' ', $bookRow);
+      }else{
+          echo '<p>Test FAILED: Select All</p>';
+      }
+
+      echo buildHTMLTable($recSet);
+  }
 
 
 

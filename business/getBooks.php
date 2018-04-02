@@ -14,42 +14,21 @@
 
 require('../datastore/Books_ds.php');
 require('../datastore/db_conn.php');
+require('../application/util/formattingUtils.php');
 
   //local Vars
 
   $db = bookDb_Connect();
 
   $books = new Books_ds($db);
-  $bookArr = $books->select(NULL); // NULL = 'get all cols'
+  $bookArr = $books->selectAll(NULL); // NULL = 'get all cols'
 
 
   echo buildHTMLTable($bookArr);
 
    ?>
 <!-- ########################################## -->
-   <?php
-  function buildHTMLTable($dataSet){
 
-    $tblHTML = "<table  class='cleanTbl'>";
-
-    foreach ($dataSet as $row) {
-
-      $tblHTML = $tblHTML."<tr class='cleanTbl'>";
-
-      foreach($row as $col){
-
-        $tblHTML = $tblHTML."<td class='cleanTbl'>$col</td>";
-
-      }
-      $tblHTML = $tblHTML."</tr>";
-
-    }
-    $tblHTML = $tblHTML."</table>";
-
-    return $tblHTML;
-  }
-
-
-    ?>
+  
 </body>
 </html>
