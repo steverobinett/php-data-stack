@@ -24,21 +24,21 @@ testBook_ds();
       $key ="0-672-31697-8";
 
 
-      $bookRow = NULL;
+      $bookRow = null;
       $bookRow = $books->selectSingle($key);
-      if (isset($bookRow)) {
+      if ($bookRow == null) {
           echo '<p style="color:green">Test passed: Single Select</p>';
           echo '<br/>'.implode(' ', $bookRow);
-      }else{
+      } else {
           echo '<p style="color:red">Test FAILED: Single Select</p>';
       }
 
-      $recSet = NULL;
+      $recSet = null;
       $recSet = $books->selectAll(null);
       if (isset($recSet)) {
           echo '<p style="color:green">Test passed: Select All</p>';
           echo '<br/>'.implode(' ', $bookRow);
-      }else{
+      } else {
           echo '<p style="color:red">Test FAILED: Select All</p>';
       }
 
