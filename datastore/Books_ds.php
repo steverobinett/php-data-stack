@@ -12,10 +12,9 @@ class Books_ds extends Books
 
     public function selectSingle($key)
     {
-        $row = null;
 
         $qry = 'SELECT * FROM Books WHERE Books.isbn = ?';
-        echo $qry;
+        // echo $qry;
         $stmt = $this->conn->prepare($qry);
         $stmt->bind_param('s', $key);
         $stmt->execute();

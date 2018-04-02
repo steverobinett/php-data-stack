@@ -13,12 +13,13 @@
 
   echo '<p> Test Case for single select</p>';
   $conn = bookDb_Connect();
-  $books = new Books_ds($conn);
+  $books = new Books_ds($conn); 
 
   $key ="0-672-31697-8";
 
   $bookRow = $books->selectSingle($key);
-  var_dump($bookRow);
+
+  echo '<br/>'.implode(' ',$bookRow);
 
 
 
