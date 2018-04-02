@@ -32,7 +32,7 @@ class Books_ds extends Books
         return $row;
     }
 
-    public function select($sel_list)
+    public function selectAll($sel_list)
     {
         if ($sel_list == null) {
             $sel_list = '*';
