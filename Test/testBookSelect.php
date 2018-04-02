@@ -10,8 +10,6 @@
 
   <?php
 
-  //Test mysqli_driver
-
 testBook_ds();
 
   function testBook_ds()
@@ -26,22 +24,22 @@ testBook_ds();
       $key ="0-672-31697-8";
 
 
-      $bookRow = null;
+      $bookRow = NULL;
       $bookRow = $books->selectSingle($key);
       if (isset($bookRow)) {
-          echo '<p>Test passed: Single Select</p>';
+          echo '<p style="color:green">Test passed: Single Select</p>';
           echo '<br/>'.implode(' ', $bookRow);
       }else{
-          echo '<p>Test FAILED: Single Select</p>';
+          echo '<p style="color:red">Test FAILED: Single Select</p>';
       }
 
       $recSet = NULL;
       $recSet = $books->selectAll(null);
       if (isset($recSet)) {
-          echo '<p>Test passed: Select Allt</p>';
+          echo '<p style="color:green">Test passed: Select All</p>';
           echo '<br/>'.implode(' ', $bookRow);
       }else{
-          echo '<p>Test FAILED: Select All</p>';
+          echo '<p style="color:red">Test FAILED: Select All</p>';
       }
 
       echo buildHTMLTable($recSet);
