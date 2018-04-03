@@ -26,7 +26,7 @@ testBook_ds();
 
       $bookRow = null;
       $bookRow = $books->selectSingle($key);
-      if ($bookRow == null) {
+      if ($bookRow != null) {
           echo '<p style="color:green">Test passed: Single Select</p>';
           echo '<br/>'.implode(' ', $bookRow);
       } else {
