@@ -21,7 +21,7 @@ require('../application/util/formattingUtils.php');
   $db = bookDb_Connect();
 
   $books = new Books_ds($db);
-  $bookArr = $books->selectAll(NULL); // NULL = 'get all cols'
+  $bookArr = $books->selectAll(null); // NULL = 'get all cols'
 
 
   echo buildHTMLTable($bookArr);
@@ -29,6 +29,6 @@ require('../application/util/formattingUtils.php');
    ?>
 <!-- ########################################## -->
 
-  
+
 </body>
 </html>

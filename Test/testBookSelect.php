@@ -31,6 +31,8 @@ testBook_ds();
           echo '<br/>'.implode(' ', $bookRow);
       } else {
           echo '<p style="color:red">Test FAILED: Single Select</p>';
+          echo '<br/>'.implode(' ', $bookRow);
+          var_dump($bookRow);
       }
 
       $recSet = null;

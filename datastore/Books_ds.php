@@ -27,7 +27,7 @@ class Books_ds extends Books
             array_push($row, $this->title);
             array_push($row, $this->price);
         }
-        if (!empty($Row)) {
+        if (!empty($row)) {
             return $row;
         } else {
             return null;
