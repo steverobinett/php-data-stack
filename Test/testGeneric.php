@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../application/css/books.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <?php
+
+testGeneric_ds();
+
+  function testGeneric_ds()
+  {
+      require("../datastore/db_conn.php");
+      require("../datastore/generic_ds.php");
+      require("../application/util/formattingUtils.php");
+
+
+
+
+      $conn = bookDb_Connect();
+      $gen = new Generic_ds($conn, 'Books');
+
+      echo buildHTMLTable($recSet);
+  }
+
+
+
+
+   ?>
+
+</body>
+</html>

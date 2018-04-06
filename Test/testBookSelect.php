@@ -16,7 +16,11 @@ testBook_ds();
   {
       require("../datastore/db_conn.php");
       require("../datastore/Books_ds.php");
+      require("../datastore/generic_ds.php");
       require("../application/util/formattingUtils.php");
+
+
+      //$gen = new Generic_ds('Books');
 
       $conn = bookDb_Connect();
       $books = new Books_ds($conn);
@@ -24,7 +28,7 @@ testBook_ds();
       $key ="0-672-31697-8";
 
 
-      $bookRow = null;   
+      $bookRow = null;
       $bookRow = $books->selectSingle($key);
       if ($bookRow != null) {
           echo '<p style="color:green">Test passed: Single Select</p>';
