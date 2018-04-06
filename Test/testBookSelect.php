@@ -24,7 +24,7 @@ testBook_ds();
       $key ="0-672-31697-8";
 
 
-      $bookRow = null;
+      $bookRow = null;   
       $bookRow = $books->selectSingle($key);
       if ($bookRow != null) {
           echo '<p style="color:green">Test passed: Single Select</p>';
