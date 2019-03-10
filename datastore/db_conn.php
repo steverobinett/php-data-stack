@@ -4,7 +4,7 @@
 
 function bookDb_Connect()
 {
-    $db = new mysqli('db715378838.db.1and1.com', 'dbo715378838', 'Linux2018', 'db715378838');
+    $db = new mysqli();
     $status = mysqli_connect_errno();
 
     if ($status) {
